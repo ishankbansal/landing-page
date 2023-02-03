@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling the heading */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  gap: 1.5vh;
+}
+
+.content > h1 {
+  font-size: 4vmax;
+  text-align: center;
+}
+
+.content > p {
+  font-size: 1.3vmax;
+  text-align: center;
+  color: #979797;
+  width: 34vw;
+}
+
+.content > button {
+  background-color: white;
+  padding: 0.8vmax 2vmax;
+  font-size: 1vmax;
+}
+
+/* Styling the devices */
+.images {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.image {
+  position: relative;
+  height: 52vh;
+  animation: 2.5s anim-lineUp cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.image-img {
+  display: block;
+  height: 100%;
+}
+
+/* Styling the features of devices */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  border-radius: 30px;
+}
+
+.headphone {
+  font-size: 1.5em !important;
+  margin-left: 50px !important;
+}
+
+.image-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image-overlay:hover {
+  opacity: 1;
+}
+
+.image-overlay:hover > * {
+  transform: translateY(0);
+}
+
+.image-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  align-self: center;
+}
+
+.image-description {
+  text-align: left;
+  font-size: 1.25em;
+  margin: 0;
+  margin-left: 30px;
+}
+
+/* Animation for heading and devices */
+.lineUp {
+  animation: 2.5s anim-lineUp ease-out infinite;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .images {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .image-description {
+    font-size: 1.1em;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .headphone {
+    font-size: 1.25em !important;
+  }
+
+  .content > p {
+    font-size: 1.8vmax;
+  }
+
+  .content > button {
+    font-size: 1.2vmax;
+  }
+}
